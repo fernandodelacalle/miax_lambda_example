@@ -19,3 +19,10 @@ Para el API:
 docker build -t suma_lambda -f dockerfiles/suma_lambda/Dockerfile .
 docker tag suma_lambda:latest 076977333390.dkr.ecr.eu-west-1.amazonaws.com/suma_lambda:latest
 docker push 076977333390.dkr.ecr.eu-west-1.amazonaws.com/suma_lambda:latest
+
+---
+Para s3
+docker build -t s3_lambda -f dockerfiles/s3_lambda/Dockerfile .
+docker tag s3_lambda:latest 076977333390.dkr.ecr.eu-west-1.amazonaws.com/s3_lambda:latest
+docker push 076977333390.dkr.ecr.eu-west-1.amazonaws.com/s3_lambda:latest
+
