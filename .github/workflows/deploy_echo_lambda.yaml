@@ -54,4 +54,4 @@ jobs:
           ECR_REGISTRY: ${{ steps.login-ecr.outputs.registry }}
           IMAGE_TAG: ${{ github.sha }}
         run: |
-          aws lambda update-function-code --region eu-west-1 --function-name echo_lambda --image-uri $ECR_REGISTRY/$ECR_REPOSITORY:$IMAGE_TAG
+          aws lambda update-function-code --region eu-west-1 --function-name echo_lambda_2 --image-uri $ECR_REGISTRY/$ECR_REPOSITORY:$IMAGE_TAG
