@@ -26,3 +26,5 @@ docker build -t s3_lambda -f dockerfiles/s3_lambda/Dockerfile .
 docker tag s3_lambda:latest 076977333390.dkr.ecr.eu-west-1.amazonaws.com/s3_lambda:latest
 docker push 076977333390.dkr.ecr.eu-west-1.amazonaws.com/s3_lambda:latest
 
+
+docker build -t miax_api -f dockerfiles/miax_api/Dockerfile .
