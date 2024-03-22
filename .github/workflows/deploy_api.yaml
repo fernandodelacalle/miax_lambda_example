@@ -65,6 +65,7 @@ jobs:
           region: ${{ env.AWS_REGION }}
           cpu : 0.25
           memory : 0.5
+          port: 8080
           # Deprecated: wait-for-service-stability: true
           # The new way to control service stability timeout
           wait-for-service-stability-seconds: 1200

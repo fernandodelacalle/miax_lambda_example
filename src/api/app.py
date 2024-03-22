@@ -17,7 +17,7 @@ def resta(
 
 
 @app.get("/mult")
-def resta(
+def mult(
     a: int,
     b: int,
 ):
