@@ -8,6 +8,8 @@ on:
 env:
   AWS_REGION: eu-west-1
   ECR_REPOSITORY: echo_lambda
+  LAMBDA_NAME: echo_lambda_2
+  DOCKERFILE_PATH: dockerfiles/echo_lambda/Dockerfile
 
 defaults:
   run:
@@ -45,7 +47,7 @@ jobs:
           # Build a docker container and
           # push it to ECR so that it can
           # be deployed to ECS.
-          docker build -t $ECR_REGISTRY/$ECR_REPOSITORY:$IMAGE_TAG -f dockerfiles/echo_lambda/Dockerfile .
+          docker build -t $ECR_REGISTRY/$ECR_REPOSITORY:$IMAGE_TAG -f $DOCKERFILE_PATH .
           docker push $ECR_REGISTRY/$ECR_REPOSITORY:$IMAGE_TAG
           echo "::set-output name=image::$ECR_REGISTRY/$ECR_REPOSITORY:$IMAGE_TAG"
 
@@ -54,4 +56,4 @@ jobs:
           ECR_REGISTRY: ${{ steps.login-ecr.outputs.registry }}
           IMAGE_TAG: ${{ github.sha }}
         run: |
-          aws lambda update-function-code --region eu-west-1 --function-name echo_lambda_2 --image-uri $ECR_REGISTRY/$ECR_REPOSITORY:$IMAGE_TAG
+          aws lambda update-function-code --region $AWS_REGION --function-name $LAMBDA_NAME --image-uri $ECR_REGISTRY/$ECR_REPOSITORY:$IMAGE_TAG
