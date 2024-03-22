@@ -22,3 +22,11 @@ def mult(
     b: int,
 ):
     return a * b
+
+
+@app.get("/divi")
+def divi(
+    a: int,
+    b: int,
+):
+    return a / b
