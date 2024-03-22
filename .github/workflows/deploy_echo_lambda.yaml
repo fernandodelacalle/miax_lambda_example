@@ -4,6 +4,9 @@ on:
   push:
     branches:
     - main
+    paths:
+    - src/echo_lambda/**
+    - dockerfiles/echo_lambda/**
 
 env:
   AWS_REGION: eu-west-1
