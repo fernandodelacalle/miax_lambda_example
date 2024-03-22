@@ -60,7 +60,7 @@ jobs:
         uses: awslabs/amazon-app-runner-deploy@main
         with:
           service: apinueva
-          image: ${{ steps.login-ecr.outputs.registry }/${{ env.ECR_REPOSITORY }}:${{ github.sha }}
+          image: ${{steps.login-ecr.outputs.registry}}/${{env.ECR_REPOSITORY}}:${{ github.sha }}
           access-role-arn: arn:aws:iam::076977333390:role/service-role/AppRunnerECRAccessRoleAPINueva
           region: ${{ env.AWS_REGION }}
           cpu : 0.25
