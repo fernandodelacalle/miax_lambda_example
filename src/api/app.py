@@ -14,3 +14,11 @@ def resta(
     b: int,
 ):
     return a - b
+
+
+@app.get("/mult")
+def resta(
+    a: int,
+    b: int,
+):
+    return a * b
